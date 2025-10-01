@@ -1,12 +1,8 @@
-print("ODD NUMBER CALCULATOR")
+print("ODD NUMBER SUMMATION")
 
-odd = 0
-for number in range(7):
-	user = eval(input("What are your numbers? " ))
-	check = user % 2
-	if check != 0:
-		odd += user
-if odd != 0:
-	print("The total sum of your odd numbers are:", odd)
-else:
-	print("You entered all even numbers")
+zero = 0
+
+for numbers in range(7):
+    user = eval(input("Enter your 7 odd number > " ))
+    if user is.float:
+    zero += user
