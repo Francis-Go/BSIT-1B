@@ -6,16 +6,16 @@ print("Hello this is the STUDENT INFORMATION SYSTEM")
 user_input = ""
 student_info = {} 
 
-while user_input != "G":
+while user_input != "X":
     print("\nA: Add Student Record")
     print("B: Print All Student Record")
     print("C: Search Student Record") 
     print("D: Delete Student Record")
     print("E: Edit Student Record")
     print("F: Export Student Record")
-    print("G: Exit System")
+    print("G: Import Student Record")    
+    print("X: Exit System")
     user_input = input("\nWhat action do you want to take? " ).upper()
-
     if user_input == "A":
         new_user = []
         add_id = eval(input("What is their ID NUMBER? " ))
@@ -84,6 +84,13 @@ while user_input != "G":
         print("Exporting all student records now...")
         with open('student_records.json', 'w') as new_file:
             json.dump(student_info, new_file, indent=3)
+        continue
+    elif user_input == "G":
+        print("Importing all student records now...")
+        with open('student_records.json', 'r') as new_file:
+            imported_student = json.load(new_file)
+        student_info = imported_student
+        print("\nData has been imported")
         continue
     print("\nThank you for using the STUDENT INFORMATION SYSTEM!!")
     break
